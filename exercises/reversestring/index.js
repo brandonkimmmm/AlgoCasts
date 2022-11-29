@@ -8,6 +8,7 @@
 
 function reverse(str) {
 	const splitString = str.split('');
+
 	for (let i = 0; i < splitString.length / 2; i++) {
 		const temp = splitString[splitString.length - 1 - i];
 		splitString[splitString.length - 1 - i] = splitString[i];
