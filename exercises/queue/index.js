@@ -14,11 +14,20 @@ class Queue {
 	};
 
 	add(data) {
-		this.queue.push(data);
+		for (let i = this.queue.length; i > 0; i--) {
+			this.queue[i] = this.queue[i - 1];
+		}
+		this.queue[0] = data;
+
+		// // js cheat
+		// this.queue = [data, ...this.queue];
+
+		// // js helper
+		// this.queue.unshift(data);
 	}
 
 	remove() {
-		return this.queue.shift();
+		return this.queue.pop();
 	}
 }
 
