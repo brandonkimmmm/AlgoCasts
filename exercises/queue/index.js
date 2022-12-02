@@ -10,24 +10,24 @@
 
 class Queue {
 	constructor() {
-		this.queue = [];
+		this.data = [];
 	};
 
 	add(data) {
-		for (let i = this.queue.length; i > 0; i--) {
-			this.queue[i] = this.queue[i - 1];
+		for (let i = this.data.length; i > 0; i--) {
+			this.data[i] = this.data[i - 1];
 		}
-		this.queue[0] = data;
+		this.data[0] = data;
 
 		// // js cheat
-		// this.queue = [data, ...this.queue];
+		// this.data = [data, ...this.data];
 
 		// // js helper
-		// this.queue.unshift(data);
+		// this.data.unshift(data);
 	}
 
 	remove() {
-		return this.queue.pop();
+		return this.data.pop();
 	}
 }
 
