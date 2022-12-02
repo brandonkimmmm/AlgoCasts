@@ -11,6 +11,22 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+	let leftPointer = list.getFirst();
+	let rightPointer = list.getFirst();
+
+	let count = 0;
+	while (count < n) {
+		rightPointer = rightPointer.next;
+		count++;
+	}
+
+	while (rightPointer.next !== null) {
+		leftPointer = leftPointer.next;
+		rightPointer = rightPointer.next;
+	}
+
+	return leftPointer;
+}
 
 module.exports = fromLast;
