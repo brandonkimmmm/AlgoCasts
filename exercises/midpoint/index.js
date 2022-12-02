@@ -14,24 +14,11 @@
 
 function midpoint(list) {
 	let leftPointer = list.getFirst();
+	let rightPointer = list.getFirst();
 
-	if (leftPointer === null) {
-		return null;
-	}
-
-	let rightPointer = leftPointer.next;
-
-	if (rightPointer === null) {
-		return leftPointer;
-	}
-
-	while (rightPointer !== null) {
-		rightPointer = rightPointer.next;
-		if (rightPointer === null) {
-			return leftPointer;
-		}
+	while (rightPointer.next && rightPointer.next.next) {
 		leftPointer = leftPointer.next;
-		rightPointer = rightPointer.next;
+		rightPointer = rightPointer.next.next;
 	}
 
 	return leftPointer;
